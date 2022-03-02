@@ -6,18 +6,22 @@ import { HomeComponent } from './home/home.component';
 import { MenuComponent } from './menu/menu.component';
 import { RouterModule} from "@angular/router";
 import {AppRoutingModule} from "./app-routing.module";
+import { ExperienceComponent } from './experience/experience.component';
+import {HttpClientModule} from "@angular/common/http";
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
-    MenuComponent
+    MenuComponent,
+    ExperienceComponent
   ],
   imports: [
     BrowserModule,
     MatSliderModule,
     AppRoutingModule,
-    RouterModule
+    RouterModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
