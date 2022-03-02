@@ -18,7 +18,6 @@ export class ExperienceComponent implements OnInit {
     this.preencheListaDeExperiencias();
   }
 
-
   preencheListaDeExperiencias(){
 
     this.service.listaTodos().subscribe(response => {
@@ -26,6 +25,5 @@ export class ExperienceComponent implements OnInit {
     });
 
   }
-
 
 }
