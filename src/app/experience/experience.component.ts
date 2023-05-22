@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {ExperienciaService} from "../service/experiencia.service";
 import {Experience} from "../model/Experience";
+import {TipoExperiencia} from "../model/TipoExperiencia";
 
 @Component({
   selector: 'app-experience',
@@ -9,7 +10,10 @@ import {Experience} from "../model/Experience";
 })
 export class ExperienceComponent implements OnInit {
 
+  selected = 'option2';
+
   experiences: Experience[] = [];
+  experienciasTratadas: Experience[] = [];
 
   constructor(public service:ExperienciaService) {
   }
@@ -22,7 +26,11 @@ export class ExperienceComponent implements OnInit {
 
     this.service.listaTodos().subscribe(response => {
       this.experiences = response;
-      console.log(response);
+      this.experiences.forEach(item => {
+        item.tipoExperienciaEnum = TipoExperiencia.preencheTipoExperienciaEnum(item.tipoExperiencia);
+        console.log(item);
+        this.experienciasTratadas.push(item);
+      });
     });
 
   }

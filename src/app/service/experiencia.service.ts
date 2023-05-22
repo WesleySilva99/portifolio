@@ -8,8 +8,8 @@ import {Observable} from "rxjs";
 })
 export class ExperienciaService {
 
-   readonly apiURL: string = 'https://portifolio-wesley-silva.herokuapp.com/api/v1/experiencia';
-  //readonly apiURL: string = 'http://localhost:8080/api/v1/experiencia';
+  //readonly apiURL: string = 'https://portifolio-wesley-silva.herokuapp.com/api/v1/experiencia';
+  readonly apiURL: string = 'http://localhost:8080/api/v1/experiencia';
 
   constructor(private http: HttpClient) {
 
@@ -17,7 +17,19 @@ export class ExperienciaService {
 
   listaTodos():Observable<Experience[]>{
 
-    return this.http.get<Experience[]>(`${ this.apiURL }`);
+    return this.http.get<Experience[]>(`${ this.apiURL+'/todas' }`);
+
+  }
+
+  listaProfissionais():Observable<Experience[]>{
+
+    return this.http.get<Experience[]>(`${ this.apiURL+'/profissionais' }`);
+
+  }
+
+  listaAcademicas():Observable<Experience[]>{
+
+    return this.http.get<Experience[]>(`${ this.apiURL+'/academicas' }`);
 
   }
 

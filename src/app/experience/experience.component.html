@@ -1,9 +1,15 @@
 <h1>EXPERIENCIAS</h1>
-<table>
-  <tr *ngFor="let experiencia of experiences; let i = index" [attr.data-index]="i">
-    <th>{{experiencia.descricaoPrincipal}}</th>
+<table class="table">
+  <tr>
+    <td>Cargo</td>
+    <td>Descrição Secundária</td>
+    <td>Função</td>
+    <td>Empresa</td>
+  </tr>
+  <tr *ngFor="let experiencia of experienciasTratadas; let i = index" [attr.data-index]="i">
+    <th>{{experiencia.cargo}}</th>
     <th>{{experiencia.descricaoSecundaria}}</th>
-    <th>{{experiencia.descricaoDaFuncao}}</th>
-    <th>{{experiencia.empresa}}</th>
+    <th>{{experiencia.descricaoAtividades}}</th>
+    <th>{{experiencia.nomeEmpresa}}</th>
   </tr>
 </table>
